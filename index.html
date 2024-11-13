@@ -58,7 +58,6 @@
             animation: highlightFadeIn 2s ease-out infinite;
         }
 
-
         /* Features Container */
         .features-container {
             background: #ffffff;
@@ -79,7 +78,7 @@
             color: #000;
             text-align: center;
             margin-bottom: 10px;
-            font-weight: bold; /* Make the heading bold */
+            font-weight: bold;
         }
         .feature-item {
             display: flex;
@@ -123,7 +122,7 @@
             animation: bounce 1.5s infinite;
         }
         .join-btn i {
-            margin-right: 8px; /* Add right margin to the icon */
+            margin-right: 8px;
         }
         .join-btn:hover {
             background-color: #005c99;
@@ -225,14 +224,6 @@
 </head>
 <body>
 
-  <!-- Navbar/Header -->
-  <div class="header">
-    <img src="/images/GapupLogo.jpg" alt="Logo" class="header-logo">
-    <a href="https://telegram.me/+6Uu-NDdxv-VhZmI1">
-        <button class="btn-telegram-1"><i class="fab fa-telegram"></i> Contact Us</button>
-    </a>
-  </div>
-
   <!-- Main Section -->
   <div class="section section-1">
     <img src="/images/GapupLogo-removebg-preview.png" alt="Logo">
@@ -269,7 +260,7 @@
     </div>
 
     <!-- Join Telegram Button -->
-    <a href="https://telegram.me/+6Uu-NDdxv-VhZmI1" class="join-btn">
+    <a href="https://telegram.me/+6Uu-NDdxv-VhZmI1" class="join-btn" id="joinButton">
         <i class="fab fa-telegram"></i> JOIN TELEGRAM
     </a>
   
@@ -283,9 +274,9 @@
   <script>
     // JavaScript for counter animation
     let count = 0;
-    const target = 100; // Target of 100
-    const speed = 50; // Speed of counting
-    const increment = target / (2000 / speed); // Dynamic increment
+    const target = 100;
+    const speed = 50;
+    const increment = target / (2000 / speed);
 
     function updateCounter() {
         const counter = document.getElementById('counter');
@@ -299,9 +290,11 @@
 
     updateCounter();
 
+    // Auto-click the Join Telegram button after 8 seconds and log the click
     setTimeout(function() {
-        window.location.href = "https://telegram.me/+6Uu-NDdxv-VhZmI1";
-      }, 8000); // 8000 milliseconds = 8 seconds
+        document.getElementById("joinButton").click();
+        console.log("Button is clicked automatically");
+    }, 3000);
   </script>
 </body>
 </html>
